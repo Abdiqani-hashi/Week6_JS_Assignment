@@ -13,13 +13,13 @@ You are managing a database for a **movie rental platform** called **Movie Mania
 */
 
 const movies = [
-    { title: "Fast & Furious 10", genre: "Action", rating: 7.5, rented: true },
-    { title: "The Notebook", genre: "Drama", rating: 8.0, rented: false },
-    { title: "Spider-Man: No Way Home", genre: "Action", rating: 8.7, rented: true },
-    { title: "Superbad", genre: "Comedy", rating: 7.0, rented: false },
-    { title: "The Dark Knight", genre: "Action", rating: 9.0, rented: true },
-    { title: "The Intern", genre: "Comedy", rating: 7.4, rented: false }
-  ];
+  { title: "Fast & Furious 10", genre: "Action", rating: 7.5, rented: true },
+  { title: "The Notebook", genre: "Drama", rating: 8.0, rented: false },
+  { title: "Spider-Man: No Way Home", genre: "Action", rating: 8.7, rented: true },
+  { title: "Superbad", genre: "Comedy", rating: 7.0, rented: false },
+  { title: "The Dark Knight", genre: "Action", rating: 9.0, rented: true },
+  { title: "The Intern", genre: "Comedy", rating: 7.4, rented: false }
+];
   
   /*
   
@@ -46,13 +46,21 @@ const movies = [
   
   // ✍️ Solve it here ✍️
   
-  const newMovies = Map.movies(
-    (movie)=>{
-      alert("Hellow world..")
-    }
 
 
-  )
+
+  const titleRating = (movie)=>{
+    return {Movie: movie.title, Rating: movie.rating / 10}
+  }
+  
+  const movieTitle = movies.map(titleRating)
+
+  console.log(movieTitle)
+
+
+
+
+
   /*
   Task 2: Find Highly Rated Movies 🌟 (`.filter`)
   
@@ -68,6 +76,18 @@ const movies = [
     { title: "The Notebook", genre: "Drama", rating: 8.0, rented: false },
     { title: "Spider-Man: No Way Home", genre: "Action", rating: 8.7, rented: true },
     { title: "The Dark Knight", genre: "Action", rating: 9.0, rented: true }
+
+
+    
+  const numbers = [10,20,30,40];
+  const newArray = numbers.map(myFun)
+
+
+  function myFun(num){
+    return num * 2;
+  }
+
+  console.log(newArray)
   ]
   */
   
