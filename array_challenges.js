@@ -46,7 +46,13 @@ const movies = [
   
   // ✍️ Solve it here ✍️
   
-  
+  const newMovies = Map.movies(
+    (movie)=>{
+      alert("Hellow world..")
+    }
+
+
+  )
   /*
   Task 2: Find Highly Rated Movies 🌟 (`.filter`)
   
