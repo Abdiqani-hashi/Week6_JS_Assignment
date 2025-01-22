@@ -78,20 +78,16 @@ const movies = [
     { title: "The Dark Knight", genre: "Action", rating: 9.0, rented: true }
 
 
-    
-  const numbers = [10,20,30,40];
-  const newArray = numbers.map(myFun)
 
-
-  function myFun(num){
-    return num * 2;
-  }
-
-  console.log(newArray)
-  ]
   */
   
-  // ✍️ Solve it here ✍️
-
-
  
+
+//Function kaan wuxu filter gareyna filimaanta ka dhibcahoodu ka sareeyo 8.0 ama ka badan.
+  const HighlyRated  = (movie) =>{
+    return movie.Rating >= 8.0;
+  }
+
+  // kodkaan wuxu isticmaalaya .filter si uu usoo bandhigo filmanta ugu dhibcaha sareeyo
+  const highlyRatedMovies = movies.filter(HighlyRated)
+  console.log(highlyRatedMovies)
