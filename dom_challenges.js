@@ -118,36 +118,58 @@ const newsData = {  // Keep the existing newsData object as is
 };
 
 
-
-
 function displayArticles(category) {
   const newsContainer = document.querySelector('#news-container');
   const articles = newsData[category];
   
   // Clear previous content
+  newsContainer.textContent = "";
 
-  
   // Create featured article
+  const FeatureArticle = articles[0];
+  const FeatureCard = document.createElement('div');
+  FeatureCard.classList.add('FeatureArticle');
 
-  
   // Fill in featured article data
-  
+  FeatureCard.innerHTML = `
+    <img src="${FeatureArticle.image}" alt="${FeatureArticle.title}">
+    <div class="article-info">
+      <h2>${FeatureArticle.title}</h2>
+      <p>${FeatureArticle.excerpt}</p>
+      <span class="date">${FeatureArticle.date}</span>
+      <span class="tag">${FeatureArticle.tag}</span>
+    </div>
+  `;
 
-  
   // Add featured article to container
+  newsContainer.appendChild(FeatureCard);
 
-  
   // Create grid for remaining articles
+  const Grid = document.createElement('div');
+  Grid.classList.add('Grid');
 
-  
   // Create remaining article cards
+  articles.slice(1).forEach(article => {
+    const CardArticle = document.createElement('div');
+    CardArticle.classList.add('article-card');
+    
+    CardArticle.innerHTML = `
+      <img src="${article.image}" alt="${article.title}">
+      <div class="article-info">
+        <h3>${article.title}</h3>
+        <p>${article.excerpt}</p>
+        <span class="date">${article.date}</span>
+        <span class="tag">${article.tag}</span>
+      </div>
+    `;
 
-  
-  
+    // Add individual article card to grid
+    Grid.appendChild(CardArticle);
+  });
+
   // Add grid to container
-  newsContainer.appendChild(newsGrid);
+  newsContainer.appendChild(Grid);
 }
-
 
 // Show initial articles
 displayArticles('Latest News');
